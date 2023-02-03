@@ -12,7 +12,7 @@ function Headers() {
       {/* Top header */}
       <div className="flex flex-grow items-center bg-amazon_blue p-1  py-2">
         {/* Amazon logo */}
-        <div className="mt-4 mx-4 flex items-center flex-grow sm:flex-grow-0">
+        <div className="mt-4 mx-4 flex items-center flex-grow sm:flex-grow-0 w-24 h-11 object-contain">
           {/* Using NexJS image tag as it compress image and does not loose quality as it uses webp image format */}
           {/* Serve image in the most optimized way */}
           <Image
@@ -20,6 +20,7 @@ function Headers() {
             src="/amazon_logo.png"
             width={100}
             height={40}
+            alt = "Amazon logo"
             // contain : increases or decreases the size of the image to fill the box whilst preserving its aspect-ratio.
             objectFit="contain"
             className="cursor-pointer"

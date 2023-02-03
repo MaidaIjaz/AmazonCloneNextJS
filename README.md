@@ -1,7 +1,6 @@
-# Build Banner of Amazon Using NextJS and Tailwind CSS (Responsive)
+# Build Product Feed of Amazon Using NextJS and Tailwind CSS (Responsive)
 
-Using the code in this repository you would be able to build the responsive Amazon Banner. You will use [react-responsive-carousel](https://www.npmjs.com/package/react-responsive-carousel) for this task.
-
+Using the code in this repository you would be able to build the responsive Amazon Product feed. 
 ## Installation Steps
 
 Run following commands in your terminal:
@@ -11,4 +10,4 @@ Run following commands in your terminal:
 
 You should see the following output after running the code:
 
-![Amazon Banner](banner.png?raw=true "Amazon Banner")
+![Product Feed](Productfeed.png?raw=true "Product Feed")

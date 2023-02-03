@@ -16,7 +16,8 @@
     "firebase": "^8.6.1",
     "firebase-admin": "^9.8.0",
     "@heroicons/react": "2.0.13",
-    "react-responsive-carousel": "3.2.23"
+    "react-responsive-carousel": "3.2.23",
+    "react-currency-formatter": "1.1.0"
   },
   "license": "MIT",
   "devDependencies": {
