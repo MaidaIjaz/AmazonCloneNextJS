@@ -13,7 +13,7 @@
 /.next/
 /out/
 /firebaseConfig.js
-/permissions.json
+
 
 # production
 /build

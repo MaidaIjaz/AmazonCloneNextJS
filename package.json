@@ -4,18 +4,26 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start-client": "next start"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "1.5.0",
+    "@heroicons/react": "2.0.13",
+    "@reduxjs/toolkit": "^1.9.1",
+    "@stripe/stripe-js": "^1.0.0",
+    "@tailwindcss/line-clamp": "^0.2.0",
+    "axios": "1.2.5",
+    "firebase": "9.16.0",
+    "firebase-admin": "11.5.0",
+    "micro": "10.0.1",
     "next": "13.1.2",
+    "next-auth": "4.18.9",
     "react": "^18",
+    "react-currency-formatter": "1.1.0",
     "react-dom": "^18",
     "react-redux": "7.2.2",
-    "@tailwindcss/line-clamp": "^0.2.0",
-    "firebase": "^8.6.1",
-    "firebase-admin": "^9.8.0",
-    "@heroicons/react": "2.0.13"
+    "react-responsive-carousel": "3.2.23",
+    "stripe": "11.8.0",
+    "moment": "2.29.4"
   },
   "license": "MIT",
   "devDependencies": {
