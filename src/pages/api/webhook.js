@@ -2,13 +2,12 @@ import {buffer} from 'micro';
 import { doc, setDoc, serverTimestamp, getFirestore } from 'firebase/firestore'
 import * as admin from 'firebase-admin';
 import { firestore } from 'firebase/app'
-
-
+import serviceAccount from "../../../permissions";
 
 // Secure connection to FIREBASE from the backend
 // allow access to firebase backend
 // admin has access to everything but we have to give permission to backend db (firebase.config is d/f (it's for frontend))
-var serviceAccount = require("../../../permissions.json");
+// var serviceAccount = require("../../../permissions.json");
 
 // avoid double initialization (Initialize app if its not already initialized)
 const app = !admin.apps.length ? admin.initializeApp({

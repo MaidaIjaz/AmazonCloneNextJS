@@ -6,53 +6,35 @@ import { useSelector } from "react-redux";
 import CheckoutProduct from "../components/CheckoutProduct";
 import Currency from "react-currency-formatter";
 import { useSession } from "next-auth/react";
-import { loadStripe } from '@stripe/stripe-js';
+import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 );
 
-
-
 function checkout() {
   const items = useSelector(selectItems);
   const total = useSelector(selectTotal);
   const { data: session } = useSession();
-   
+
   // Make a request to backend, backend creates a checkout session, comes back to user, frontend redirects user to checkout page
-  const createCheckoutSession = async() => {
+  const createCheckoutSession = async () => {
     // access to stripe js variable
-    const stripe = await stripePromise
+    const stripe = await stripePromise;
     // call backend to create checkout session
-    const checkoutSessions = await axios.post('/api/checkout_sessions', 
-    {
+    const checkoutSessions = await axios.post("/api/checkout_sessions", {
       items,
-      email: session.user.email
+      email: session.user.email,
     });
     // redirect users to stripe checkout
     const result = await stripe.redirectToCheckout({
       sessionId: checkoutSessions.data.id,
-    })
-    if (result.error){
+    });
+    if (result.error) {
       alert(result.error.message);
     }
+  };
 
-  }
-  
-  
-    // React.useEffect(() => {
-    //   // Check to see if this is a redirect back from Checkout
-    //   const query = new URLSearchParams(window.location.search);
-    //   if (query.get('success')) {
-    //     console.log('Order placed! You will receive an email confirmation.');
-    //   }
-  
-    //   if (query.get('canceled')) {
-    //     console.log('Order canceled -- continue to shop around and checkout when you’re ready.');
-    //   }
-    // }, []);
-  
-  
   return (
     <div className="bg-gray-100">
       <Headers />
@@ -118,7 +100,6 @@ function checkout() {
       </main>
     </div>
   );
-
 }
 
 export default checkout;

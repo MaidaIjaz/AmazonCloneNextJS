@@ -54,20 +54,26 @@ function Headers() {
         </div>
 
         {/* Right side icons*/}
-        <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
+        <div className="text-white flex items-center  text-xs space-x-6 mx-6 whitespace-nowrap">
           <div
             onClick={() => (!session ? signIn() : signOut())}
-            className="link"
+            className="link font-extrabold md:text-sm"
           >
             {/* If user logged In, show user name, else say sign in */}
             {session ? `Hello, ${session.user.name}` : "Sign In"}
-            <p className="font-extrabold md:text-sm">Account & Lists</p>
+            {/* <p className="font-extrabold md:text-sm">Account & Lists</p> */}
           </div>
-          <div className="link">
-            <p>Returns</p>
+          <div 
+
+          // Navigate to order page
+          onClick={() => router.push("/orders")}
+          className="cursor-pointer link">
+            <p className="font-extrabold md:text-sm">Returns</p>
             <p className="font-extrabold md:text-sm">& Orders</p>
           </div>
           <div
+
+          // Navigate to checkout
             onClick={() => router.push("/checkout")}
             className="relative link flex items-center"
           >
