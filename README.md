@@ -1,23 +1,26 @@
-# Implement Stripe Checkout in NextJS App for Payment of Products in Basket
+# Implement Webhooks, Push Successful Orders Data to Firestore and Build Success Page
 
-## What is Stripe?
-
-Stripe Checkout is a pre-built, customizable payment form that allows users to securely enter their payment information and make a purchase on your website. It can be easily integrated into a Next.js e-commerce website by using the Stripe Checkout API.
 ## General work flow
 
-Using the code in this repository users would be able to pay for the products in basket using credit card. When we have items in our basket and click checkout, we pass items from basket to stripe, stripe then return checkout session and then user is redirected to that session. Once it goes through Stripe session, it either fails or succeeds. And then come back to our website.
+Webhooks in Stripe allow you to receive real-time updates about events that happen in your Stripe account. When certain events occur, such as a successful payment or a charge being refunded, Stripe will send an HTTP request to the webhook endpoint that you have configured. This request will contain information about the event, such as the type of event, the data associated with the event, and a timestamp of when the event occurred. You can use webhooks to add data of orders for which payment has been completed through stripe.
 
+Webhook Link: https://stripe.com/docs/webhooks
 
 ## Detailed Instructions
 
-To integrate Stripe Checkout into a Next.js e-commerce website, you will need to do the following steps:
+* Create a new endpoint on your Next.js server that will handle the webhook from Stripe. This endpoint should be able to receive and parse the JSON payload sent by Stripe.
 
-* Sign up for a Stripe account, obtain your API keys and add them in .env file.
-* Install the Stripe JavaScript library in your Next.js project by running the command npm install stripe.
-* Create an event handler in your Next.js application for handling the checkout process. 
-* Use the Stripe library to create a new Stripe Checkout session, which will generate a unique checkout URL. 
-* Redirect the user to the checkout URL when they click the "Checkout" button on your e-commerce website.
-* Handle the successful completion of the checkout process by displaying a success message to the user.
+* Verify that the webhook is authentic by checking the signature provided in the headers of the incoming request.
+
+* Check the event type in the payload to see if it's a "checkout.session.completed" event.
+
+* If it is a "checkout.session.completed" event, extract the relevant data from the payload, such as the customer's email and the amount of the transaction.
+
+* Anything inside api is on backend and running node.js not regular javascript. If you use regular firebase dependency inside api you will get into error (that why we are using firebase-admin). Use the Firebase Admin to push this data to your Firebase store.
+
+* Once data is pushed, you can use Firestore to retrieve the data.
+
+* We also built a success page to show the Thank you message.
 
 
 ## Installation Steps
@@ -27,5 +30,11 @@ Run following commands in your terminal:
 1. ```npm install```
 2. ```npm run dev```
 
+For webhooks we need to use a local emulator for listening to events (need stripe cli). Run this command:
+stripe listen --forward-to http://localhost:3000/api/webhook
 
-![Stripe Page](stripe.png?raw=true "Stripe Page")
+
+![Success Page](success.png?raw=true "Success Page")
+
+
+

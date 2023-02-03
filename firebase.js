@@ -1,4 +1,6 @@
-import firebase from "firebase";
+import { getApp, initializeApp} from "firebase/app";
+
+import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
   apiKey: process.env.API_KEY,
@@ -8,3 +10,8 @@ const firebaseConfig = {
   messagingSenderId:  process.env.MESSAGING_SENDER_ID,
   appId:  process.env.APP_ID
 };
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+export default db;
