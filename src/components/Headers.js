@@ -1,12 +1,15 @@
-import React from "react";
+import React, { use } from "react";
 import Image from "next/image";
 import {
   MagnifyingGlassIcon,
   Bars3Icon,
   ShoppingCartIcon,
 } from "@heroicons/react/24/solid";
+import { useSession, signIn, signOut } from "next-auth/react"
 
 function Headers() {
+// Use useSession hook to access session state
+ const { data: session } = useSession();
   return (
     <header>
       {/* Top header */}
@@ -39,8 +42,9 @@ function Headers() {
 
         {/* Right side icons*/}
         <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
-          <div className="link">
-            <p>Hello Maida Ijaz</p>
+          <div onClick={() => !session ? signIn(): signOut()} className="link">
+            {/* If user logged In, show user name, else say sign in */}
+            {session ? `Hello, ${session.user.name}`: "Sign In"}
             <p className="font-extrabold md:text-sm">Account & Lists</p>
           </div>
           <div className="link">
