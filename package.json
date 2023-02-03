@@ -4,9 +4,10 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start-client": "next start"
   },
   "dependencies": {
+    "@stripe/stripe-js": "^1.0.0",
     "@reduxjs/toolkit": "1.5.0",
     "next": "13.1.2",
     "react": "^18",
@@ -18,7 +19,9 @@
     "@heroicons/react": "2.0.13",
     "react-responsive-carousel": "3.2.23",
     "react-currency-formatter": "1.1.0",
-    "next-auth": "4.18.9"
+    "next-auth": "4.18.9",
+    "stripe": "11.8.0",
+    "axios": "1.2.5"
   },
   "license": "MIT",
   "devDependencies": {

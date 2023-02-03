@@ -21,12 +21,21 @@ function Product({ id, title, price, description, category, image }) {
     setIsPrime(Math.random() < 0.5);
   });
 
-  const addItemToBasket =() =>{
-    const product = { id, title, price, description, category, image, IsPrime, rating };
+  const addItemToBasket = () => {
+    const product = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      image,
+      IsPrime,
+      rating,
+    };
     // Sending product as an action to Redux store
     // Product is passed as payload
-    dispatch(addToBasket(product))
-  }
+    dispatch(addToBasket(product));
+  };
 
   return (
     <div className="relative flex flex-col m-5 bg-white z-30 p-10">
@@ -65,8 +74,14 @@ function Product({ id, title, price, description, category, image }) {
           <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
         </div>
       )}
-      <button onClick={() => {
-                addItemToBasket()}} className="mt-auto button">Add to Basket</button>
+      <button
+        onClick={() => {
+          addItemToBasket();
+        }}
+        className="mt-auto button"
+      >
+        Add to Basket
+      </button>
     </div>
   );
 }
