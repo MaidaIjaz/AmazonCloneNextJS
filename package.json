@@ -15,7 +15,8 @@
     "@tailwindcss/line-clamp": "^0.2.0",
     "firebase": "^8.6.1",
     "firebase-admin": "^9.8.0",
-    "@heroicons/react": "2.0.13"
+    "@heroicons/react": "2.0.13",
+    "react-responsive-carousel": "3.2.23"
   },
   "license": "MIT",
   "devDependencies": {
