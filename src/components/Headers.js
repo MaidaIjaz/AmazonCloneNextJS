@@ -6,19 +6,29 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/solid";
 import { useSession, signIn, signOut } from "next-auth/react"
+// In NextJS we have a built-in router this allows user to redirect to the page it want to
+import {Router, useRouter} from "next/router"
+import { useSelector } from "react-redux";
+import { selectItems } from "../slices/basketSlice";
 
 function Headers() {
 // Use useSession hook to access session state
  const { data: session } = useSession();
+//  This hook gives us Router object
+ const router = useRouter();
+ const items = useSelector(selectItems)
   return (
     <header>
       {/* Top header */}
       <div className="flex flex-grow items-center bg-amazon_blue p-1  py-2">
         {/* Amazon logo */}
-        <div className="mt-4 mx-4 flex items-center flex-grow sm:flex-grow-0 w-24 h-11 object-contain">
+        <div onClick ={() => router.push("/")} className="mt-4 mx-4 flex items-center flex-grow sm:flex-grow-0 w-24 h-11 object-contain">
           {/* Using NexJS image tag as it compress image and does not loose quality as it uses webp image format */}
           {/* Serve image in the most optimized way */}
           <Image
+            // Pages are stacked up over each other
+            //  Navigate to home page
+            
             // src="/amazon_logo.png"
             src="/amazon_logo.png"
             width={100}
@@ -51,11 +61,11 @@ function Headers() {
             <p>Returns</p>
             <p className="font-extrabold md:text-sm">& Orders</p>
           </div>
-          <div className="relative link flex items-center">
+          <div onClick ={() => router.push("/checkout")} className="relative link flex items-center">
             <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">
-              0
+              {items.length}
             </span>
-            <ShoppingCartIcon className="h-10" />
+            <ShoppingCartIcon   className="h-10" />
             <p className="hidden md:inline font-extrabold md:text-sm mt-2">
               Basket
             </p>

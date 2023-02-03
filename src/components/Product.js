@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { StarIcon } from "@heroicons/react/24/solid";
 import Currency from "react-currency-formatter";
+// Useful hook for dispatching an action
+import { useDispatch } from "react-redux";
+import { addToBasket } from "../slices/basketSlice";
 
 const MAX_RATING = 5;
 const MIN_RATING = 1;
 function Product({ id, title, price, description, category, image }) {
   // The default value is 0, it will be used during pre-rendering and the first render in the browser (hydration)
+  const dispatch = useDispatch();
   const [rating, setRating] = useState(0);
   const [IsPrime, setIsPrime] = useState(0);
 
@@ -16,6 +20,13 @@ function Product({ id, title, price, description, category, image }) {
     );
     setIsPrime(Math.random() < 0.5);
   });
+
+  const addItemToBasket =() =>{
+    const product = { id, title, price, description, category, image, IsPrime, rating };
+    // Sending product as an action to Redux store
+    // Product is passed as payload
+    dispatch(addToBasket(product))
+  }
 
   return (
     <div className="relative flex flex-col m-5 bg-white z-30 p-10">
@@ -54,7 +65,8 @@ function Product({ id, title, price, description, category, image }) {
           <p className="text-xs text-gray-500">FREE Next-day Delivery</p>
         </div>
       )}
-      <button className="mt-auto button">Add to Basket</button>
+      <button onClick={() => {
+                addItemToBasket()}} className="mt-auto button">Add to Basket</button>
     </div>
   );
 }

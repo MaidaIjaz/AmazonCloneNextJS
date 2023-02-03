@@ -1,10 +1,13 @@
 import Head from "next/head";
+// import { Provider } from "react-redux";
 import Banner from "../components/Banner";
 import Headers from "../components/Headers";
 import ProductFeed from "../components/ProductFeed";
 
+
 export default function Home(props) {
   return (
+    // <Provider store={store}>
     <div className="bg-gray-100">
       <Head>
         <title>Amazon Clone</title>
@@ -19,6 +22,7 @@ export default function Home(props) {
         <ProductFeed products ={props.products}  />
       </main>
     </div>
+    // </Provider>
   );
 }
 
