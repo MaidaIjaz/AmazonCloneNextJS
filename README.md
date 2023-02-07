@@ -7,18 +7,18 @@ Here is the final link of my [deployment](https://amazon-clone-next-js-ashy.verc
 
 * Used the powerful tools provided by NextJS to implement Server-Side Rendering(SSR) for better website performance.
 * Build a responsive frontend of Amazon using TailwindCSS
-* Implemented Add and Remove product from basket functionality and calculated the total price of products in the basket using Redux. 
 * Used [next-auth](https://next-auth.js.org/) to Log In and Log Out the user from the application
+* Implemented Add and Remove product from basket functionality and calculated the total price of products in the basket using Redux. 
 * Integrated [Stripe API](https://stripe.com/docs/treasury/examples/sample-app) in NextJS App for Payment of Products in Basket
 * Used Webhooks to receive real-time updates about payment completion and push order data to Firestore.
-* Build order page and pull items from Firestore 
-* build a Cloud Firestore database to have an order screen with all your orders details!
+* Build a Cloud Firestore database to have an order screen with all your orders details
 * Used Vercel for the final deployment of application
 
 Using SSR and Image components of NextJS provides us with the best performance. Google PageSpeed Insights give the following results:
-<p align="center">
-<img width="730" alt="image" src="https://user-images.githubusercontent.com/57410862/217228018-6d97b587-ef00-4152-bbad-32df5eb42635.png">
-</p>
+
+| ![Amazon Haeder](https://user-images.githubusercontent.com/57410862/217228018-6d97b587-ef00-4152-bbad-32df5eb42635.png?raw=true "Amazon Header") |
+|-|
+
 
 # Installation Steps
 
