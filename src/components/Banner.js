@@ -20,15 +20,14 @@ function Banner() {
         showIndicators={false}
         showThumbs={false}
         interval={5000}
-      >
-        <div>
-          {/* loading lazy will not slow your user experience down */}
+        >
+        <div className="h-96">
           <img loading="lazy" src="/banner1.jpg" alt="" />
         </div>
-        <div>
+        <div className="h-96">
           <img loading="lazy" src="/banner2.jpg" alt="" />
         </div>
-        <div>
+        <div className="h-96">
           <img loading="lazy" src="/banner3.jpg" alt="" />
         </div>
       </Carousel>
