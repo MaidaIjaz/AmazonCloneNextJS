@@ -3,7 +3,7 @@
 In this project, I used NextJS, Tailwind CSS, and JavaScript to build the frontend of my application. Redux is used for managing the state of my application and Firebase to store my backend data. For payments I have used Stripe API and Webhooks. Also, I used **Axios** for API calls. Here is the final link of my [deployment](https://amazon-clone-next-js-ashy.vercel.app/).
 
 
-* Used the powerful tools provided by **NextJS** to implement Server-Side Rendering(**SSR**) for better website performance (**99 performance on Google PageSpeed Insights**).
+* Used the powerful tools provided by **NextJS** to implement Server-Side Rendering(**SSR**) for better website performance (**99 performance score on Google PageSpeed Insights**).
 * Build a responsive frontend of Amazon using **TailwindCSS**.
 * Used [next-auth](https://next-auth.js.org/) to Log In and Log Out the user from the application.
 * Implemented Add and Remove product from basket functionality and calculated the total price of products in the basket using **Redux**. 
