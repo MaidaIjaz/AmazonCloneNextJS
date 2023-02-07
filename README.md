@@ -1,14 +1,35 @@
-In this project, I used NextJS, Tailwind CSS, and JavaScript to build the frontend of my application. I used Firebase to store my backend data. For payments I have used Stripe API and Webhooks.We will use axios for API calls
+# Amazon Clone
+
+In this project, I used NextJS, Tailwind CSS, and JavaScript to build the frontend of my application. I used Firebase to store my backend data. For payments I have used Stripe API and Webhooks. We will use axios for API calls
+
+Here is the final link of my [deployment](https://amazon-clone-next-js-ashy.vercel.app/).
+
+
+* Used the powerful tools provided by NextJS to implement Server-Side Rendering(SSR) for better website performance.
+* Build a responsive frontend of Amazon using TailwindCSS
+* Implemented Add and Remove product from basket functionality and calculated the total price of products in the basket using Redux. 
+* Used [next-auth](https://next-auth.js.org/) to Log In and Log Out the user from the application
+* Integrated [Stripe API](https://stripe.com/docs/treasury/examples/sample-app) in NextJS App for Payment of Products in Basket
+* Used Webhooks to receive real-time updates about payment completion and push order data to Firestore.
+* Build order page and pull items from Firestore 
+* build a Cloud Firestore database to have an order screen with all your orders details!
+* Used Vercel for the final deployment of application
+
+Using SSR and Image components of NextJS provides us with the best performance. Google PageSpeed Insights give the following results:
+<p align="center">
+<img width="730" alt="image" src="https://user-images.githubusercontent.com/57410862/217228018-6d97b587-ef00-4152-bbad-32df5eb42635.png">
+</p>
 
 # Installation Steps
 
-Run following commands in your terminal:
+Clone this repository and Run following commands in your terminal:
 
 1. ```npm install```
 2. ```npm run dev```
 
-For webhooks we need to use a local emulator for listening to events (need stripe cli). Run this command:
-stripe listen --forward-to http://localhost:3000/api/webhook
+For webhooks you need to use a local emulator for listening to events, so install Stripe CLI and run the following command:
+
+```stripe listen --forward-to http://localhost:3000/api/webhook```
 
 
 
@@ -33,7 +54,7 @@ I used [next-auth](https://next-auth.js.org/) to setup  authentication in a few 
 To add NextAuth.js to a project create a file called `[...nextauth].js` in `pages/api/auth`. This contains the dynamic route handler for NextAuth.js which will also contain all of your global NextAuth.js configurations. All requests to /api/auth/* (signIn, callback, signOut, etc.) will automatically be handled by NextAuth.js.
 
 
-## Checkout Page
+## Build Checkout Page Using Redux
 
 Then I built a checkout page where I showed all the products in the basket on the left side of the page and total price on the right side of the page. I also implemented Add and Remove product from basket functionality and calculated the total price of products in the basket using Redux. 
 
