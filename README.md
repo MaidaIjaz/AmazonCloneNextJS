@@ -1,22 +1,20 @@
 # Amazon Clone
 
-In this project, I used NextJS, Tailwind CSS, and JavaScript to build the frontend of my application. I used Firebase to store my backend data. For payments I have used Stripe API and Webhooks. We will use axios for API calls
-
-Here is the final link of my [deployment](https://amazon-clone-next-js-ashy.vercel.app/).
+In this project, I used NextJS, Tailwind CSS, and JavaScript to build the frontend of my application. Redux is used for managing the state of my application and Firebase to store my backend data. For payments I have used Stripe API and Webhooks. Also, I used **Axios** for API calls. Here is the final link of my [deployment](https://amazon-clone-next-js-ashy.vercel.app/).
 
 
-* Used the powerful tools provided by NextJS to implement Server-Side Rendering(SSR) for better website performance.
-* Build a responsive frontend of Amazon using TailwindCSS
-* Used [next-auth](https://next-auth.js.org/) to Log In and Log Out the user from the application
-* Implemented Add and Remove product from basket functionality and calculated the total price of products in the basket using Redux. 
-* Integrated [Stripe API](https://stripe.com/docs/treasury/examples/sample-app) in NextJS App for Payment of Products in Basket
-* Used Webhooks to receive real-time updates about payment completion and push order data to Firestore.
-* Build a Cloud Firestore database to have an order screen with all your orders details
-* Used Vercel for the final deployment of application
+* Used the powerful tools provided by **NextJS** to implement Server-Side Rendering(**SSR**) for better website performance (**99 performance on Google PageSpeed Insights**).
+* Build a responsive frontend of Amazon using **TailwindCSS**.
+* Used [next-auth](https://next-auth.js.org/) to Log In and Log Out the user from the application.
+* Implemented Add and Remove product from basket functionality and calculated the total price of products in the basket using **Redux**. 
+* Integrated [Stripe API](https://stripe.com/docs/treasury/examples/sample-app) in NextJS App for Payment of Products in Basket.
+* Used **Webhooks** to receive real-time updates about payment completion and push order data to Firestore.
+* Build a **Cloud Firestore database** to have an order history page with all your orders details.
+* Used **Vercel** for the final deployment of application.
 
 Using SSR and Image components of NextJS provides us with the best performance. Google PageSpeed Insights give the following results:
 
-| ![Amazon Haeder](https://user-images.githubusercontent.com/57410862/217228018-6d97b587-ef00-4152-bbad-32df5eb42635.png?raw=true "Amazon Header") |
+| ![Performance Score](perfScore.png?raw=true "Performance Score") |
 |-|
 
 
