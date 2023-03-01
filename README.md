@@ -69,7 +69,7 @@ To integrate Stripe Checkout into a Next.js e-commerce website, you will need to
 * Sign up for a Stripe account, obtain your API keys and add them in .env file.
 * Install the Stripe JavaScript library in your Next.js project by running the command `npm install stripe`.
 * Create an event handler in your Next.js application for handling the checkout process.
-* Create a new endpoint on your Next.js server that will use the Stripe library to create a new Stripe Checkout session, and generate a unique checkout URL (`pages/api/checkout_sessions`). A
+* Create a new endpoint on your Next.js server that will use the Stripe library to create a new Stripe Checkout session, and generate a unique checkout URL (`pages/api/checkout_sessions`). 
 * Redirect the user to the checkout URL when they click the "Checkout" button on your e-commerce website.
 * Handle the successful completion of the checkout process by displaying a success message to the user.
 
